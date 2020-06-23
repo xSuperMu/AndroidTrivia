@@ -10,33 +10,33 @@ import com.example.android.navigation.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var drawerLayout: DrawerLayout
+	private lateinit var drawerLayout: DrawerLayout
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        @Suppress("UNUSED_VARIABLE")
-        val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
+	override fun onCreate(savedInstanceState: Bundle?) {
+		super.onCreate(savedInstanceState)
+		@Suppress("UNUSED_VARIABLE")
+		val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
 
-        drawerLayout = binding.drawerLayout
+		drawerLayout = binding.drawerLayout
 
-        val navController = this.findNavController(R.id.myNavHostFragment)
+		val navController = this.findNavController(R.id.myNavHostFragment)
 
-        navController.addOnDestinationChangedListener { nc, nd, args ->
-            if (nd.id == nc.graph.startDestination) {
-                drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED)
-            } else {
-                drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
-            }
-        }
+		navController.addOnDestinationChangedListener { nc, nd, args ->
+			if (nd.id == nc.graph.startDestination) {
+				drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED)
+			} else {
+				drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
+			}
+		}
 
-//        NavigationUI.setupActionBarWithNavController(this, navController)
-        NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
-        NavigationUI.setupWithNavController(binding.navView, navController)
-    }
+//		NavigationUI.setupActionBarWithNavController(this, navController)
+		NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
+		NavigationUI.setupWithNavController(binding.navView, navController)
+	}
 
 
-    override fun onSupportNavigateUp(): Boolean {
-        val navController = this.findNavController(R.id.myNavHostFragment)
-        return NavigationUI.navigateUp(navController, drawerLayout)
-    }
+	override fun onSupportNavigateUp(): Boolean {
+		val navController = this.findNavController(R.id.myNavHostFragment)
+		return NavigationUI.navigateUp(navController, drawerLayout)
+	}
 }

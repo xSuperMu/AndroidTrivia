@@ -31,7 +31,7 @@
             app:enterAnim="@anim/fade_in"
             app:popEnterAnim="@anim/fade_in"
             app:popExitAnim="@anim/fade_out"
-            app:popUpTo="@+id/gameFragment"
+            app:popUpTo="@id/gameFragment"
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_gameFragment_to_gameWonFragment"
@@ -39,7 +39,7 @@
             app:enterAnim="@anim/fade_in"
             app:popEnterAnim="@anim/fade_in"
             app:popExitAnim="@anim/fade_out"
-            app:popUpTo="@+id/gameFragment"
+            app:popUpTo="@id/gameFragment"
             app:popUpToInclusive="true" />
     </fragment>
 
@@ -53,7 +53,7 @@
             app:destination="@id/gameFragment"
             app:enterAnim="@anim/fade_in"
             app:exitAnim="@anim/fade_out"
-            app:popUpTo="@+id/titleFragment" />
+            app:popUpTo="@id/titleFragment" />
         <argument
             android:name="numQuestions"
             app:argType="integer" />
@@ -72,7 +72,7 @@
             app:destination="@id/gameFragment"
             app:enterAnim="@anim/fade_in"
             app:exitAnim="@anim/fade_out"
-            app:popUpTo="@+id/titleFragment" />
+            app:popUpTo="@id/titleFragment" />
     </fragment>
 
     <fragment
